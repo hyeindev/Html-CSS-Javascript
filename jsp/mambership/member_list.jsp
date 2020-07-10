@@ -82,7 +82,7 @@ table {
 		</a>
 	</td>
 	<td>
-		<a href="member_delete.jsp?id=<%=rs.getString("id")%>" onclick="return check();">
+		<a href="member_delete.jsp?id=<%=rs.getString("id")%>" onclick="return check();"> <!-- 삭제 전 confirm() -->
 			삭제
 		</a>
 	</td>
