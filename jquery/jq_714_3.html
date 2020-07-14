@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {	float:left;}
+	span {	color:blue;}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("ul li:nth-child(2)").append("<span> - 2nd! </span>");
+		$("ul li:nth-child(3)").append("<span> - 조혜인 </span>");
+		$("ul li:nth-child(even)").css("backgroundColor","pink");
+		$("ul li:nth-child(odd)").css("backgroundColor", "yellow");
+	});
+
+// ul li:nth-child(index) : ul 태그 밑 li 태그의 형제요소중 index 번째 요소를 선택   
+</script>
+</head>
+<body>
+
+<div>
+	<ul>
+		<li>사과</li>
+		<li>복숭아</li>
+		<li>바나나</li>
+	</ul>
+</div>
+<div>
+	<ul>
+		<li>소나타</li>
+	</ul>
+</div>
+<div>
+	<ul>
+		<li>코끼리</li>
+		<li>뱀</li>
+		<li>토끼</li>
+		<li>말</li>
+		<li>코끼리</li>
+	</ul>
+</div>
+</body>
+</html>

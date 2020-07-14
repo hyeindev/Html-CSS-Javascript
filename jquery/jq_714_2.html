@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>처번째와 마지막 자식 엘리먼트에 스타일 적용하기  :first-child, :last-child</title>
+
+<style>
+.a {
+			text-decoration:underline;
+			color:red;
+			font-size:20pt;
+}
+</style>
+
+<script src="../js/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+ 
+ 
+ 		$(document).ready(function() {
+ 			$('div span:first-child, div span:last-child')
+ 				.css({'text-decoration':'underline',
+ 						'color':'red',	
+ 						'font-size','20pt'
+ 				});
+ 			
+ 		});
+ 		
+/* 	$(document).ready(function() {
+		$('div span:first-child, div span:last-child').css('text-decoration','underline')
+				.css('color','red')
+				.css('font-size','20pt');
+		-> 체인방식
+	}); */
+	
+	
+
+	/* 
+	$(document).ready(function() {
+		$('div span:first-child, div span:last-child').addClass('a');
+		
+	});
+	
+		-> addClass 로 스타일 적용
+ */
+ 
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<span>one</span>
+	<span>two</span>
+	<span>three</span>
+	<span>4</span>
+</div>
+
+<div>
+	<span>5</span>
+	<span>6</span>
+	<span>7</span>
+	<span>8</span>
+</div>
+</body>
+</html>
