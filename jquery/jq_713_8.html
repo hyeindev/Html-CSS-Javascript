@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모든 엘리먼트에 스타일을 적용하고 인접한 형제를 노드로 추가하기-- "*","prev + next"</title>
+<style>
+
+.textstyle {
+				font-size:24pt; line-height:20pt; margin:10px;
+}
+</style>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$('*').addClass('textstyle');
+		// * -> 모든 엘리먼트에 적용시킴 
+		$('em+a').css('background-color','yellow').each(function() {
+			//em 태그 아래에 있는 a 태그 딱 '하나'만 찾는다.
+			$(this).appendTo('.result1');
+			// $('result1').append($(this).text()+"\n"); 코드와 같다
+			//appendTo 는 엘리먼트 자체를 가져다가 추가시킨다
+			//append($(this).text()) 는 해당 요소를 읽어오는것
+		});
+		console.log("검색된 엘리먼트의 개수 : " + $('em+a').length);
+	});
+
+</script>
+</head>
+<body>
+<em>one</em>
+<a>two</a>
+<a>three</a>
+<b>four</b>
+<a>five</a>
+<em>six</em>
+
+<hr size="5" color="red">
+
+<div>
+	<span>prev + next로 검색된 엘리먼트 : </span>
+	<span class="result1"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	table {	table-layout:auto;	width:75%;	}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('td').css('background-color','yellow');
+		$('td:eq(4)').css('background-color','pink');
+		$('td:eq(7)').css('background-color','red');
+	});
+// eq => equal 의 속성! ()안에는 0번째부터 엘리먼트의 인덱스 번호가 들어간다.
+
+</script>
+</head>
+<body>
+<table>
+	<tr>
+	<td>zero</td><td>one</td><td>two</td><td>three</td><td>four</td><td>five</td>
+	<td>six</td><td>seven</td><td>eight</td><td>nine</td><td>ten</td>
+	</tr>
+</table>
+</body>
+</html>

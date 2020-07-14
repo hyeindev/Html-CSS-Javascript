@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접한 자손 엘리먼트를 노드로 추가하기</title>
+<style>
+em{
+		font-size:20pt; line-height:30pt;
+		margin:20px;	color:blue;
+}
+div p {
+		display:inline-block;
+}
+</style>
+
+<script src="../js/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+			$('p em').css('background-color','yellow').each(function() {
+					$('.result1').append($(this).text()+"\n");
+			}); 
+			
+			$('div > em').css('background-color','pink').each(function() {
+					$('.result2').append($(this).text() + "\n");
+				
+			});
+			// 홀수번째만 선택되게하는것 index[0] 부터 시작
+			$('div>p:even').css('background-color','green').each(function() {
+					$('.result3').append($(this).text() + "\n");
+			});
+			<!-- $('div#flower>p').css 로 id 를 이용 -->
+			// result1, 2 라는 클래스에 append (추가) 해라. this.text() 를!! 
+			
+			console.log("검색된 엘리먼트 개수 : " + $('p em').length);
+			console.log("검색된 엘리먼트 개수 : " + $('div > em').length);
+			console.log("검색된 엘리먼트 개수 : " + $('div > p').length);
+	});
+
+	// p em -> p가 조상 em 이 자손 : p 밑의 모든 em 태그를 지칭한다.
+	// div > em  -> 부모와 자식 : div 의 바로 밑에있는 em 만을 지칭한다. (중간에 무언가 껴서는 안됨)
+	
+	//이를 selector 라고 하며, selector 에 관한 정보는 reference director의 link__selector_JQuery 참조
+	
+	
+	/*
+		css('css 프로퍼티 이름','값') 	=> CSS 프로퍼티와 값을 기술하여 스타일을 적용한다.
+		
+		$(this) 	=> 현재 선택중인 요소
+	
+	
+	*/
+	
+</script>
+
+</head>
+<body>
+
+<p>
+	<em>one</em>
+	<em>two</em>
+	<span><em>three</em></span>
+</p>
+
+
+<div>
+	<em>four</em>
+	<span><em>five</em></span>
+	<em>six</em>
+</div>
+
+<div>
+	<p>개나리</p>
+	<p>수수꽃</p>
+	<p>캄파눌라</p>
+	<p>안개꽃</p>
+	<p>모란</p>
+</div>
+
+<hr size="3" color="red">
+
+<div>
+	<span>ancestor descendant 로 검색된 엘리먼트 : </span>
+	<span class="result1"></span>
+</div>
+<div>
+	<span>parent &gt; child 로 검색된 엘리먼트 : </span>
+	<span class="result2"></span>
+</div>
+<div>
+	<span>parent &gt; child 로 검색된 엘리먼트 : </span>
+	<span class="result3"></span>
+</div>
+
+
+
+
+</body>
+</html>
