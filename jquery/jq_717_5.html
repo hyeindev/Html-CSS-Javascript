@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+span { color:pink; cursor:pointer;}
+div {
+		margin:3px; width:80px;
+		display:none;	height:80px;
+		float:left;
+}
+div#red {background:red;}
+div#green {background:green;}
+div#blue {background:blue;}
+div#gray {background:gray;}
+div#pink {background:pink;}
+
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#id_1").click(function() {
+			$("div.a:hidden:first").fadeIn("slow");
+			//div를 숨김 :first = 숨겨진 것중 첫번째
+		});
+		$("#id_2").click(function() {
+			$("div.b:hidden:first").fadeIn("slow");
+			//div를 숨김 :first = 숨겨진 것중 첫번째
+		});
+	});
+	
+/*
+ 	fadeIn() : 엘리먼트의 불투명도를 점점 높여서 에리먼트가 보이게 한다. 
+*/
+*
+</script>
+</head>
+<body>
+<span id="id_1">Click</span><p>
+<div class="a" id="red"></div>
+<div class="a" id="green"></div>
+<div class="a" id="blue"></div>
+
+<span id="id_2">Click</span><p>
+<div class="b" id="gray"></div>
+<div class="b" id="pink"></div>
+
+</body>
+</html>

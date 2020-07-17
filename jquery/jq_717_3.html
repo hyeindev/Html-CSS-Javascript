@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+span { display:none;}
+
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function() {
+	$("button:eq(0)").click(function() {
+		$("span:first").toggle();
+	});
+	
+	$("button:eq(1)").click(function() {
+		$("span:eq(1)").toggle("slow",function() {
+			$(this).css('background','yellow');
+		});
+	});
+	
+	$("button:eq(2)").click(function() {
+		$("span:eq(2)").toggle();
+	});
+	
+	$("button:eq(3)").click(function() {
+		$("span:last").toggle("slow",function() {
+			$(this).css('background','yellow');
+		});
+	});
+	
+	
+	
+	});
+		
+		/*
+			toggle() : 	엘리먼트가 사라졌다 나타나도록 하는 상태 반복
+						show(), hide() 의 기능을 둘다 가짐
+		*/
+</script>
+
+</head>
+<body>
+
+<button>Show/Hide It</button>
+<span>hi</span>
+	<p>
+<button>Show/Hide It Slow</button>
+<span>nice to meet u</span>	
+<p>
+<button>Show/Hide It Add!!!</button>
+<span>hi add</span>
+	<p>
+<button>Show/Hide It Slow Add!!1</button>
+<span>nice to meet u add!!</span>	
+</body>
+</html>
