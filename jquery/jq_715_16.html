@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트 뒤에 위치하는 모든 형제 엘리먼트 찾기</title>
+<style>
+div, span { 
+	width:60px; height:60px;
+	margin:5px; float:left;
+	border:3px #FF7E7E inset;
+	background:white
+}
+.before { background:#FFB4B4 }
+.selected { border:5px outset #00D7FA }
+</style>
+
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	$("button").click(function() {
+		$("span").prevAll("span, div").addClass("before");
+	});
+});
+
+/*
+	$("span").prevAll("span, div") : span 태그와 같은 노드에 위치하면서 그 앞에 위치한 태그 중
+									 span 혹은 div 태그를 찾는다
+									  찾아진 태그의 배경색을 분홍색으로 바꾼다
+*/
+</script>
+</head>
+<body>
+<p>
+	<button>형제 엘리먼트에 스타일 입히기</button>
+</p>
+
+<div id="first">first</div>
+
+<span id="second" class="middle">
+	second sibling
+	<div id="child">child</div>
+</span>
+
+<div id="third" class="middle">third sibling</div>
+<span id="fourth" class="middle">fourth sibling</span>
+<span id="fifth" class="middle">fifth sibling</span>
+
+<div id="sixth">last</div>
+</body>
+</html>
