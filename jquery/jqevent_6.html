@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+p {
+   background:#FFF612;
+   font-weight:bold;
+   cursor:pointer;
+   padding:5px;
+}
+</style>
+
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+   //$("p").live("click", function() {
+   $("p").bind("click", function() {
+      $(this).after("<p>Another Paragraph!</p>");
+   });
+});
+</script>
+</head>
+<body>
+<p>Click Me!</p>
+</body>
+</html>

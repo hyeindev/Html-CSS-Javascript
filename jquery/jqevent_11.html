@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콤보박스에서 선택한 과일 그림 출력하기</title>
+<style>
+	img {
+			width:80px; height:80px;	margin-left:50px;
+	}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(function() {
+				$('#sel').change(function(event) {
+					var imgSrc = $(event.target).val();
+					$('#img').attr('src',imgSrc);
+				}).change();
+		});
+		
+		/*
+			change() : 값이 변경될 때 실행할 이벤트 핸들러 연결
+		*/
+</script>
+</head>
+<body>
+	<form name="frm">
+		<table>
+			<tr>
+				<td>
+					<select id="sel">
+						<option value="../images/strawberry.gif">딸기</option>
+						<option value="../images/banana.gif">바나나</option>
+						<option value="../images/apple.gif" selected>사과</option>
+						<option value="../images/strawberry.gif">딸기</option>
+					</select>
+				</td>
+				<td>
+					<img id="img">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

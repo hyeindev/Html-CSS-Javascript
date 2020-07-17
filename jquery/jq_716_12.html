@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+		width:220px;	height:50px;
+		background-color:red;	cursor:pointer;
+		margin:5px;
+}
+span {
+		display:block;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//여러번 사용되는 경우에는 확장 집합 객체를 변수에 저장한다.
+		var div = $('div:first');
+		$('#result1').text("outerWidth : " + div.outerWidth() + 
+							"	outerWidth(true) : " + div.outerWidth(true));
+									//margin 을 포함한 너비
+		$('#result2').text("outerHeight : " + div.outerHeight() + 
+							"	outerHeight(true) : " + div.outerHeight(true));
+									
+	});
+	/*
+		div.outerWidth(true), div.outerHeight(true) : true 를 주면 margin같은 여백 까지 포함한 너비를 구해준다
+		여기서 div 의 margin 을 5 로 주었기 때문에 4면에 5씩의 여백이 생긴다.
+		즉, 가로길이에 10의 여백, 세로길이에 10의 여백이 생긴다.
+		width - padding 안쪽 크기
+		innerWidth - border 안쪽 크기
+		outerWidth - border 포함 크기
+	*/
+</script>
+
+</head>
+<body>
+<div></div>
+<span id="result1">  </span>
+<span id="result2"></span>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	span{display:block;}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		$('b').appendTo('span');
+		$('em').clone().appendTo('span');
+	});
+	
+	/*
+		clone() : 엘리먼트 집합을 복제한다.
+	*/
+
+</script>
+</head>
+<body>
+	<b>사과</b>
+	<em>바나나</em>
+	<span>갖기 싫은 과일 : </span>
+	<span>먹기 싫은 과일 : </span>
+</body>
+
+<!-- 	  사과는 appendTo 로 인해 사라지고, span 에 추가된다.
+		 바나나는 clone() 에 의해 복사된 뒤 붙여져서 사라지지않으면서 span 에 추가된다.
+ -->
+</html>

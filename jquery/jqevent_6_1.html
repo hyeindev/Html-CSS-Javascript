@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	p { text-align:center;}
+	p#a {
+			background-color:pink;	font-weight:bold;
+			cursor:pointer;	padding:5px;
+	}
+	p#b {
+			background-color:gray;	font-weight:bold;
+			cursor:pointer;	padding:5px;
+	}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+				var count = 0;
+			// $("p").live("click",function() {
+				$("p").bind("click",function() {
+					count++;
+					if(count%2==1) {
+					$(this).after("<p id='a'>"+ count+" 번째 Click ! </p>");
+					}
+					else {
+						$(this).after("<p id='b'>"+ count+" 번째 Click ! </p>");
+					}
+				
+				});
+				
+			});
+</script>
+</head>
+<body>
+<p>Click me :) </p>
+</body>
+</html>
